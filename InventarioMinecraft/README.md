@@ -4,7 +4,7 @@ Vas a intentar simular un inventario del Minecraft usando un array bidimensional
 ## Base
 En la función **main** crea un menú principal con tres opciones:
 - Ver inventario
-- Añadir item
+- Añadir item. Preguntará al jugador qué ítem quiere meter en el inventario.
 - Cerrar
 
 Necesitarás tres funciones **principales** (inicializarInventario(), verInventario() y addObjeto()) y tres funciones **auxiliares**.
@@ -12,7 +12,7 @@ Necesitarás tres funciones **principales** (inicializarInventario(), verInventa
 * **inicializarInventario():**
   * **Recibe:** el inventario (array bidimensional String)
   * **Devuelve:** el inventario inicializado.
-  * **Hace:** inicializa el inventario, poniendo el objeto en "" y la cantidad en "0"
+  * **Hace:** inicializa el inventario, poniendo el objeto en "" y la cantidad en "0". Se llama al principio del programa.
 * **verInventario()**
   * **Recibe:** el inventario
   * **Devuelve:** nada
@@ -42,3 +42,17 @@ Necesitarás tres funciones **principales** (inicializarInventario(), verInventa
   * **Recibe:** el inventario
   * **Devuelve:** un boolean
   * **Hace:** comprueba si existe algun item en el inventario
+
+## Extra 1: dropear objetos
+Vamos a añadir una tercera opcion al menu: dropear un objeto del inventario. Para ello solo hará falta una nueva función:
+* **dropearItem()**
+ * **Recibe:** el inventario y el objeto que quiere dropear
+ * **Devuelve:** el inventario actualizado sin el objeto
+ * **Hace:** quita el objeto pasado del inventario:
+   * Si el inventario está vacío, saltará un error
+   * Si no, buscará el objeto pasado a lo largo del inventario
+     * Si no lo encuentra, mostrará un error por pantalla
+     * Si lo encuentra, actuará en función del número de ítems que hay
+       * Si es mayor a 1, simplemente disminuirá el número en 1
+       * Si es 1, quitará completamente el ítem del inventario
+*Nota: podemos hacer que el array sea ordenado o no. En Minecraft no son ordenados, ya que puedes tener un ítem en la posición 2 sin tener nada en la 0 ni en la 1.*  
