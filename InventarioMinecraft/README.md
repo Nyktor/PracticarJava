@@ -46,13 +46,35 @@ Necesitarás tres funciones **principales** (inicializarInventario(), verInventa
 ## Extra 1: dropear objetos
 Vamos a añadir una tercera opcion al menu: dropear un objeto del inventario. Para ello solo hará falta una nueva función:
 * **dropearItem()**
- * **Recibe:** el inventario y el objeto que quiere dropear
- * **Devuelve:** el inventario actualizado sin el objeto
- * **Hace:** quita el objeto pasado del inventario:
-   * Si el inventario está vacío, saltará un error
-   * Si no, buscará el objeto pasado a lo largo del inventario
-     * Si no lo encuentra, mostrará un error por pantalla
-     * Si lo encuentra, actuará en función del número de ítems que hay
-       * Si es mayor a 1, simplemente disminuirá el número en 1
-       * Si es 1, quitará completamente el ítem del inventario
+  * **Recibe:** el inventario y el objeto que quiere dropear
+  * **Devuelve:** el inventario actualizado sin el objeto
+  * **Hace:** quita el objeto pasado del inventario:
+    * Si el inventario está vacío, saltará un error
+    * Si no, buscará el objeto pasado a lo largo del inventario
+      * Si no lo encuentra, mostrará un error por pantalla
+      * Si lo encuentra, actuará en función del número de ítems que hay
+        * Si es mayor a 1, simplemente disminuirá el número en 1
+        * Si es 1, quitará completamente el ítem del inventario
 *Nota: podemos hacer que el array sea ordenado o no. En Minecraft no son ordenados, ya que puedes tener un ítem en la posición 2 sin tener nada en la 0 ni en la 1.*  
+
+## Extra 2: Cofre público
+En Minecraft, solo tú tienes acceso a tu Inventario, pero los **Cofres** son públicos, puede verlos cualquiera. Crearás un array bidimensional de String 9x2 **global** que se llame "cofre". Para simplificar, asumiremos que es un cofre de una sola fila.
+Añadirás dos opciones más al menú principal: "Ver cofre" y "Meter item en el cofre" (*en esta ultima preguntaremos el ítem que quiere guardar*). Finalmente, crearás tres funciones más:
+* **inicializarCofre()**
+  * **Recibe:** nada
+  * **Devuelve:** nada (recordemos que el cofre es global!)
+  * **Hace:** inicializa los contenidos del cofre del mismo modo que el inventario. Hay que llamarla al principio del programa
+* **verCofre()**
+  * **Recibe:** nada
+  * **Devuelve:** nada
+  * **Hace:** muestra los contenidos del cofre, tal como hemos hecho con el inventario
+* **guardarItem()** (*para esto hemos venido*)
+  * **Recibe:** el inventario del jugador y el ítem a guardar
+  * **Devuelve:** el inventario del jugadora actualizado
+  * **Hace:** mete un ítem del jugador en el cofre:
+    * Si el ítem no existe en el inventario del jugador, saltará error.
+    * Si existe, miraremos si ya hay un ítem igual en el cofre
+      * Si lo hay, le quitaremos el ítem al jugador (1 unidad o todo, si solo queda una) y aumentaremos la cantidad del cofre en 1\*
+      * Si no lo hay, comprobaremos que el cofre no esté lleno (*podemos usar la función de antes, ya que inventario y cofre son dos arrays bidimensionales de String de la misma estructura!*)
+        * Si está lleno, haremos saltar un error
+        * Si no está lleno, buscaremos el primer sitio libre en el cofre y repetiremos el paso **\***
