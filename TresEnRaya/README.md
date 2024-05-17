@@ -11,7 +11,7 @@ El programa, a lo largo de su funcionamiento:
 En todo momento comprobarás que el jugador introduce **datos correctos** (_es decir que no te meterá la ficha en la fila -2 ni en la 47_), además de las comprobaciones lógicas del propio juego (_que no intente poner una ficha donde ya hay una, que no se pueda seguir jugando si hay ganador o el tablero esta lleno..._).
 Necesitarás tres funciones **principales** (imprimirTablero, insertarFicha y hayGanador) y tres funciones **auxiliares** (inicializarTablero, estaOcupada, estaLleno).
 
-### Funciones principales
+## Funciones principales
 - **imprimirTablero()**
   - **Recibe:** el tablero (_array bidimensional char 3x3_).
   - **Devuelve:** nada.
@@ -26,7 +26,7 @@ Necesitarás tres funciones **principales** (imprimirTablero, insertarFicha y ha
   - **Devuelve:** el tipo de ficha ganadora ('X' u 'O') si hay ganador, o una ficha vacía (' ') si todavía no lo hay.
   - **Hace:** comprueba todas las filas, las columnas y las dos diagonales buscando que haya tres carácteres ('X' u 'O') consecutivos. Si los hay, devolverá el **char** correspondiente. Si no, devolverá un espacio (' ').
 
-### Funciones auxiliares
+## Funciones auxiliares
 - **inicializarTablero()**
   - **Recibe:** el tablero.
   - **Devuelve:** el tablero inicializado.
