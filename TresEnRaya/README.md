@@ -21,7 +21,7 @@ Necesitarás tres funciones **principales** (imprimirTablero, insertarFicha y ha
   - **Recibe:** el tablero (_array bidimensional char 3x3_).
   - **Devuelve:** nada.
   - **Hace:** imprime el tablero por pantalla. Tendrás que ser creativo a la hora de asegurarte de que se imprima tal y como lo dibujaríamos en papel.
-            _Pista: usa un bucle doble con condicionales dentro._
+            _Pista: usa dos bucles anindados con condicionales dentro._
 - **insertarFicha()**
   - **Recibe:** el tablero, número de fila, número de columna, y una ficha ('X' u 'O').
   - **Devuelve:** el array actualizado.
