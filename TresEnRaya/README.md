@@ -3,12 +3,17 @@ En este programa simularás un tres en raya en Java usando un array **local** de
 
 ## Base
 El programa, a lo largo de su funcionamiento: 
-1. Imprimirá por pantalla el tablero
+1. Imprimirá por pantalla el tablero.
 2. Preguntará al jugador **que le toque** en qué columna y en qué fila querrá colocar su ficha, la cual será un **char** ('X' para el jugador 1 y 'O' para el jugador 2).
-3. Al llenarse el tablero o cuando alguien haga 3 en raya, la partida terminará
-4. Se preguntará si quiere volver a jugar
+3. Al llenarse el tablero o cuando alguien haga 3 en raya, la partida terminará con un ganador o con un empate.
+  3.1. Si hay un ganador, se mostrará quién de los dos ha ganado.
+  3.2. Si es un empate, se mostrará como tal.  
+4. Se preguntará si se quiere volver a jugar.
+  4.1. En caso afirmativo, el tablero se vaciará y la partida empezará de nuevo.
+  4.2. En caso negativo, el programa finalizará del todo. 
 
-En todo momento comprobarás que el jugador introduce **datos correctos** (_es decir que no te meterá la ficha en la fila -2 ni en la 47_), además de las comprobaciones lógicas del propio juego (_que no intente poner una ficha donde ya hay una, que no se pueda seguir jugando si hay ganador o el tablero esta lleno..._).
+En todo momento comprobarás que el jugador introduce **datos correctos** (_es decir que no te meterá la ficha en la fila -2 ni en la 47_), además de las comprobaciones lógicas del propio juego (_que no intente poner una ficha donde ya hay una, que no se pueda seguir jugando si hay ganador o el tablero esta lleno..._). Además, controlarás el turno: cuando un jugador termine su turno, le tocará al otro, y así hasta acabar.
+
 Necesitarás tres funciones **principales** (imprimirTablero, insertarFicha y hayGanador) y tres funciones **auxiliares** (inicializarTablero, estaOcupada, estaLleno).
 
 ## Funciones principales
