@@ -54,7 +54,8 @@ Vamos a añadir una tercera opcion al menu: dropear un objeto del inventario. Pa
       * Si no lo encuentra, mostrará un error por pantalla
       * Si lo encuentra, actuará en función del número de ítems que hay
         * Si es mayor a 1, simplemente disminuirá el número en 1
-        * Si es 1, quitará completamente el ítem del inventario
+        * Si es 1, quitará completamente el ítem del inventario.
+
 *Nota: podemos hacer que el array sea ordenado o no. En Minecraft no son ordenados, ya que puedes tener un ítem en la posición 2 sin tener nada en la 0 ni en la 1.*  
 
 ## Extra 2: Cofre público
